@@ -1,0 +1,289 @@
+#Read README on HOW TO
+
+import pyautogui
+from pynput import keyboard
+import time
+import sys
+
+# Check if running in IDLE
+running_in_idle = False
+if 'idlelib' in sys.modules:
+    running_in_idle = True
+
+# State variable to enable/disable macros
+macros_enabled = False
+
+# delete function // will be inside the common_steps
+def global_timer():
+    time.sleep(0.1)
+
+## delete any pins fucntion // middle of the screen  // part of functions  
+def delete_any_pins():
+    pyautogui.moveTo(pyautogui.size()[0] // 2, pyautogui.size()[1] // 2)
+    pyautogui.click()
+    global_timer()
+    pyautogui.moveTo(936, 598)
+    pyautogui.click()
+
+## button 0 // have to be standing on the pin    
+def delete_only():
+    press_key('m')
+    global_timer()
+    move_and_click(pyautogui.size()[0] // 2, pyautogui.size()[1] // 2)
+    move_and_click(936, 598)
+    pyautogui.click()
+    press_key('m')    
+    
+# Helper functions for common tasks
+def move_and_click(x, y):
+    pyautogui.moveTo(x, y)
+    pyautogui.click()
+    global_timer()
+
+def press_key(key):
+    pyautogui.press(key)
+    global_timer()
+
+def type_and_enter(text):
+    pyautogui.write(text)
+    press_key('enter')
+    pyautogui.click()
+
+# Macro function templates
+def perform_macro_common_steps():
+    press_key('m')
+    global_timer()
+    delete_any_pins()
+    move_and_click(199, 879)
+    move_and_click(pyautogui.size()[0] // 2, pyautogui.size()[1] // 2)
+    press_key('enter')
+    global_timer()
+
+def perform_macro_common_steps_for_text():
+    press_key('m')
+    global_timer()
+    delete_any_pins()
+    move_and_click(199, 879)
+    move_and_click(pyautogui.size()[0] // 2, pyautogui.size()[1] // 2)
+    global_timer()
+
+# places GREEN pin    
+def perform_macro_key_grave_GREEN_PIN():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for ` triggered!")
+    perform_macro_common_steps()
+    pyautogui.click()
+    move_and_click(1016, 596)
+    move_and_click(1018, 515)
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+
+def perform_macro_key_1_MAGIC_TREE():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 1 triggered!")
+    perform_macro_common_steps_for_text()
+    type_and_enter('magic tree')
+    move_and_click(1016, 596)
+    move_and_click(1018, 515)
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+    
+# places GREEN pin w/ HERB 
+def perform_macro_key_2_GREEN_HERB():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 1 triggered!")
+    perform_macro_common_steps_for_text()
+    type_and_enter('herb')
+    move_and_click(1016, 596)
+    move_and_click(1018, 515)
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+
+def perform_macro_key_3_YELLOW_PIN():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 3 triggered!")
+    perform_macro_common_steps()
+    pyautogui.click()
+    move_and_click(1016, 596)
+    time.sleep(0.1)  # Additional sleep to ensure the action is registered
+    move_and_click(1020, 482)
+    press_key('enter')
+    time.sleep(0.1)  # Sleep before the next action
+    press_key('enter')
+    press_key('m')
+
+def perform_macro_key_4_TIER_THREE():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 4 triggered!")
+    perform_macro_common_steps_for_text()
+    type_and_enter('tier three')
+    move_and_click(1016, 596)
+    move_and_click(1020, 482)
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+
+# places PURPLE pin w/ TURTLE
+def perform_macro_key_5_RED_TURTLE():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 5 triggered!")
+    perform_macro_common_steps_for_text()
+    type_and_enter('turtle')
+    move_and_click(1016, 596)
+    move_and_click(1021, 446)
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+
+# perform_macro_key_6_MANUAL_PURPLE_BMS
+def perform_macro_key_6_MANUAL_PURPLE_BMS():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 6 triggered!")
+
+    # Remember the current mouse position
+    initial_x, initial_y = pyautogui.position()
+
+    # Move to pin location and click, then return to the initial position and click
+    move_and_click(199, 879)
+    move_and_click(initial_x, initial_y)
+
+    # Type "imps" and press enter once
+    type_and_enter('bms')
+
+    # Apply the first and second offsets, clicking at each position
+    offset_positions = [(63, 64), (1, -55)]
+    for offset_x, offset_y in offset_positions:
+        initial_x += offset_x
+        initial_y += offset_y
+        move_and_click(initial_x, initial_y)
+
+    # Finalize and close the map
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+
+
+# places PURPLE pin w/ WOLVES
+# at the position of the mouse
+# open the map
+# click the macro
+def perform_macro_key_7_MANUAL_PURPLE_WOLVES():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 7 triggered!")
+
+    # Remember the current mouse position
+    initial_x, initial_y = pyautogui.position()
+
+    # Move to pin location and click, then return to the initial position and click
+    move_and_click(199, 879)
+    move_and_click(initial_x, initial_y)
+
+    # Type "wolves" and press enter once
+    type_and_enter('wolves')
+
+    # Apply the first and second offsets, clicking at each position
+    offset_positions = [(63, 64), (1, -55)]
+    for offset_x, offset_y in offset_positions:
+        initial_x += offset_x
+        initial_y += offset_y
+        move_and_click(initial_x, initial_y)
+
+    # Finalize and close the map
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+
+
+def perform_macro_key_8_MANUAL_PURPLE_IMPS():
+    if not macros_enabled:
+        return
+    if running_in_idle:
+        print("Macro for 8 triggered!")
+
+    # Remember the current mouse position
+    initial_x, initial_y = pyautogui.position()
+
+    # Move to pin location and click, then return to the initial position and click
+    move_and_click(199, 879)
+    move_and_click(initial_x, initial_y)
+
+    # Type "imps" and press enter once
+    type_and_enter('imps')
+
+    # Apply the first and second offsets, clicking at each position
+    offset_positions = [(63, 64), (1, -55)]
+    for offset_x, offset_y in offset_positions:
+        initial_x += offset_x
+        initial_y += offset_y
+        move_and_click(initial_x, initial_y)
+
+    # Finalize and close the map
+    press_key('enter')
+    press_key('enter')
+    press_key('m')
+    
+def perform_macro_key_0_PIN_DELETE():
+    if not macros_enabled:
+        return
+    delete_only()
+    
+# Dictionary to map keys to functions
+key_to_macro = {
+    '`': perform_macro_key_grave_GREEN_PIN,
+    '1': perform_macro_key_1_MAGIC_TREE,
+    '2': perform_macro_key_2_GREEN_HERB,
+    '3': perform_macro_key_3_YELLOW_PIN,
+    '4': perform_macro_key_4_TIER_THREE,
+    '5': perform_macro_key_5_RED_TURTLE,
+    '6': perform_macro_key_6_MANUAL_PURPLE_BMS,
+    '7': perform_macro_key_7_MANUAL_PURPLE_WOLVES,
+    '8': perform_macro_key_8_MANUAL_PURPLE_IMPS,
+    '0': perform_macro_key_0_PIN_DELETE   
+}
+
+
+def print_macros_status(enabled):
+    if enabled:
+        status = "ENABLED [TRUE]"
+    else:
+        status = "DISABLED [FALSE]"
+    
+    print(f"Macros enabled: {status}")
+
+# Use this function instead of direct print
+def on_press(key):
+    global macros_enabled
+    try:
+        if key == keyboard.Key.shift:
+            macros_enabled = not macros_enabled
+            print_macros_status(macros_enabled)
+        elif hasattr(key, 'char') and key.char in key_to_macro:
+            key_to_macro[key.char]()
+    except AttributeError:
+        pass
+
+
+if running_in_idle:
+    print("Program started and listening for `,1,2,3,4,5,6,7,8,0")  # Initial feedback to indicate the program is running
+
+with keyboard.Listener(on_press=on_press) as listener:
+    listener.join()

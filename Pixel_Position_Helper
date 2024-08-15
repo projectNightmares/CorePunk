@@ -1,6 +1,3 @@
-#Purpose: Captures screen x, y pixel position with a mouse click
-#How to: Run via IDLE, press 'v', click anywhere and see the results.
-
 import pyautogui
 from pynput import mouse, keyboard
 import sys

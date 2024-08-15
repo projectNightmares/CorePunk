@@ -88,7 +88,7 @@ This Python script automates the placement and deletion of pins on a game map. T
    - **3 Key:** Places a yellow pin on the map.
    - **4 Key:** Place a yellow pin and types "Tier Three."
    - **5 Key:** Places a red pin and marks it as a "Turtle" location.
-   - **6 Key:** Allows manual placement of a purple pin marked as "BMS."
+   - **6 Key:** Allows manual placement of a purple pin marked as "BMS." - Boar Mammoth Skinny
    - **7 Key:** Allows manual placement of a purple pin marked as "Wolves."
    - **8 Key:** Allows manual placement of a purple pin marked as "Imps."
    - **0 Key:** Deletes the pin located at the center of the screen.

@@ -2,7 +2,7 @@
 
 
 # User README for Mouse Position Capture Script
-#(Feel free to use)
+# (Feel free to use)
 
 ## Overview
 This Python script is designed to capture the screen's X, Y pixel positions whenever a mouse click is registered. It is particularly useful for scenarios where you need to log or track specific screen coordinates during user interactions.

@@ -57,12 +57,12 @@ This script is a simple yet effective tool for capturing screen coordinates via 
 # User README for Game Map Pin Placement Script
 
 ## Overview
-This Python script automates the placement and deletion of pins on a game map. The script is designed to work with a game running on a 1080p (1920x1080) resolution screen. For accurate pin placement, ensure that the game map is zoomed in, centered on the screen, and that the character remains stationary.
+This Python script automates the placement and deletion of pins on a game map. The script is designed to work with a game running on a 24inch 1080p (1920x1080) resolution screen. For accurate pin placement, ensure that the game map is zoomed in, centered on the screen, and that the character remains stationary.
 
 ## Key Features
-- **Automated Pin Placement:** The script allows you to place various types of pins on specific map locations with predefined macros.
-- **Manual Pin Placement:** For certain pins, you can manually position your mouse on the map and trigger the macro to place the pin.
-- **Pin Deletion:** The script can also delete pins that are positioned at the center of the screen.
+- **Automated Pin Placement('`', 1, 2, 3, 4, 5) :** The script allows you to place various types of pins on the map at the position of the character.
+- **Manual Pin Placement(6, 7, 8):** For these pins, open the map, move your mouse to the position of your choice, and click the key.
+- **Pin Deletion(0):** The script can also delete pins that are positioned at the center of the screen. (Prolly won't work as intended, might need to modify it).
 
 ## Requirements
 - **Python Libraries:** The script uses `pyautogui` and `pynput` libraries. Install them using pip:
@@ -95,7 +95,7 @@ This Python script automates the placement and deletion of pins on a game map. T
 
 ## Important Usage Notes
 - **Map Positioning:** The game map must be precisely centered on the screen and zoomed in for the script to function correctly.
-- **Screen Resolution:** This script has been tested on a 1080p (1920x1080) screen resolution. Ensure your screen matches this resolution for accurate performance. Otherwise, use the Pixel_Position_Helper to adjust to your screen. 
+- **Screen Resolution:** This script has been tested on a 1080p (1920x1080) screen resolution. Ensure your screen matches this resolution for accurate performance. Otherwise, use the Pixel_Position_Helper to modify the x,y values. 
 - **Character Stationary:** Ensure that your in-game character remains stationary when placing pins to avoid inaccuracies.
 
 ## Manual Pin Placement
@@ -111,7 +111,7 @@ For manual pin placement (`6`, `7`, and `8` keys):
 - **`delete_only()`:** Deletes the pin located at the center of the screen.
 
 ## Troubleshooting
-- **Incorrect Pin Placement:** Ensure your screen resolution is set to 1920x1080 and that the game map is centered and zoomed in.
+- **Incorrect Pin Placement:** Ensure your screen resolution is set to 1920x1080 and that the game map is centered and zoomed in. Otherwise, use the Pixel_Position_Helper to modify the x,y values. 
 - **Macros Not Triggering:** Verify that macros are enabled by pressing the `Shift` key and checking the status message.
 
 ## Conclusion

@@ -1,4 +1,4 @@
-# CorePunk
+# CorePunk - Mouse Position Capture & Auto Pin Creator
 
 
 # User README for Mouse Position Capture Script
@@ -80,11 +80,11 @@ This Python script automates the placement and deletion of pins on a game map. T
 
 3. **Automated Key Functions:**
    - **Grave (`) Key:** Places a green pin on the map.
-   - **1 Key:** Marks a location as a "Magic Tree" on the map.
-   - **2 Key:** Marks a green herb location on the map.
+   - **1 Key:** Place a green pin and types "Magic Tree" on the map.
+   - **2 Key:** Places a green pin and types "Herb" on the map.
    - **3 Key:** Places a yellow pin on the map.
-   - **4 Key:** Marks a location as "Tier Three."
-   - **5 Key:** Places a purple pin and marks it as a "Turtle" location.
+   - **4 Key:** Place a yellow pin and types "Tier Three."
+   - **5 Key:** Places a red pin and marks it as a "Turtle" location.
    - **6 Key:** Allows manual placement of a purple pin marked as "BMS."
    - **7 Key:** Allows manual placement of a purple pin marked as "Wolves."
    - **8 Key:** Allows manual placement of a purple pin marked as "Imps."

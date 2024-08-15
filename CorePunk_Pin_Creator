@@ -1,5 +1,3 @@
-#Read README on HOW TO
-
 import pyautogui
 from pynput import keyboard
 import time

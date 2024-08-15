@@ -28,9 +28,11 @@ The primary purpose of this script is to capture and display the X, Y pixel posi
 - **Real-Time Feedback:** When running in IDLE, the script provides real-time feedback, indicating when the capture process starts and stops.
 
 ## Requirements
+- Python (tons of 4 min vids on youtube)
 - **Python Libraries:** The script requires the following Python libraries:
   - `pyautogui`
   - `pynput`
+ 
 
   These can be installed using pip:
   ```bash
@@ -70,6 +72,7 @@ This Python script automates the placement and deletion of pins on a game map. T
 
 ## How to Use
 1. **Running the Script:**
+   - Python (tons of 4 min vids on youtube)
    - Run the script in IDLE or another Python environment.
    - The script will start and listen for specific key inputs.
 

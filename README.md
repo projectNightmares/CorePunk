@@ -51,3 +51,65 @@ The primary purpose of this script is to capture and display the X, Y pixel posi
 
 ## Conclusion
 This script is a simple yet effective tool for capturing screen coordinates via mouse clicks. It provides an easy-to-use interface for toggling capture on and off, with clear output in the IDLE environment.
+
+# User README for Game Map Pin Placement Script
+
+## Overview
+This Python script automates the placement and deletion of pins on a game map. The script is designed to work with a game running on a 1080p (1920x1080) resolution screen. For accurate pin placement, ensure that the game map is zoomed in, centered on the screen, and that the character remains stationary.
+
+## Key Features
+- **Automated Pin Placement:** The script allows you to place various types of pins on specific map locations with predefined macros.
+- **Manual Pin Placement:** For certain pins, you can manually position your mouse on the map and trigger the macro to place the pin.
+- **Pin Deletion:** The script can also delete pins that are positioned at the center of the screen.
+
+## Requirements
+- **Python Libraries:** The script uses `pyautogui` and `pynput` libraries. Install them using pip:
+  ```bash
+  pip install pyautogui pynput
+  ```
+
+## How to Use
+1. **Running the Script:**
+   - Run the script in IDLE or another Python environment.
+   - The script will start and listen for specific key inputs.
+
+2. **Enable/Disable Macros:**
+   - Press the `Shift` key to toggle the macros on or off.
+   - When enabled, a message indicating "Macros enabled: ENABLED [TRUE]" will appear.
+   - When disabled, "Macros enabled: DISABLED [FALSE]" will be shown.
+
+3. **Automated Key Functions:**
+   - **Grave (`) Key:** Places a green pin on the map.
+   - **1 Key:** Marks a location as a "Magic Tree" on the map.
+   - **2 Key:** Marks a green herb location on the map.
+   - **3 Key:** Places a yellow pin on the map.
+   - **4 Key:** Marks a location as "Tier Three."
+   - **5 Key:** Places a purple pin and marks it as a "Turtle" location.
+   - **6 Key:** Allows manual placement of a purple pin marked as "BMS."
+   - **7 Key:** Allows manual placement of a purple pin marked as "Wolves."
+   - **8 Key:** Allows manual placement of a purple pin marked as "Imps."
+   - **0 Key:** Deletes the pin located at the center of the screen.
+
+## Important Usage Notes
+- **Screen Resolution:** This script has been tested on a 1080p (1920x1080) screen resolution. Ensure your screen matches this resolution for accurate performance.
+- **Map Positioning:** The game map must be precisely centered on the screen and zoomed in for the script to function correctly.
+- **Character Stationary:** Ensure that your in-game character remains stationary when placing pins to avoid inaccuracies.
+
+## Manual Pin Placement
+For manual pin placement (`6`, `7`, and `8` keys):
+- Open the map.
+- Move your mouse to the desired location on the map.
+- Press the respective key (`6`, `7`, or `8`) to place the pin.
+
+## Script Details
+- **`move_and_click(x, y)`:** Moves the mouse to the specified (x, y) coordinates and clicks.
+- **`press_key(key)`:** Simulates pressing a keyboard key.
+- **`type_and_enter(text)`:** Types the specified text and presses Enter.
+- **`delete_only()`:** Deletes the pin located at the center of the screen.
+
+## Troubleshooting
+- **Incorrect Pin Placement:** Ensure your screen resolution is set to 1920x1080 and that the game map is centered and zoomed in.
+- **Macros Not Triggering:** Verify that macros are enabled by pressing the `Shift` key and checking the status message.
+
+## Conclusion
+This script automates the process of marking locations on a game map, making it easier to track important points of interest. Ensure that your screen setup matches the required resolution and that your game map is properly positioned for optimal results.

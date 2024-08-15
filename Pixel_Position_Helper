@@ -1,0 +1,43 @@
+#Purpose: Captures screen x, y pixel position with a mouse click
+#How to: Run via IDLE, press 'v', click anywhere and see the results.
+
+import pyautogui
+from pynput import mouse, keyboard
+import sys
+
+running_in_idle = False
+if 'idlelib' in sys.modules:
+    running_in_idle = True
+
+capturing = False
+listener_mouse = None
+
+def on_click(x, y, button, pressed):
+    if pressed:
+        if running_in_idle:
+            print(f'Position: ({x}, {y})')
+
+def on_press(key):
+    global capturing, listener_mouse
+    if key == keyboard.KeyCode.from_char('v'):
+        if capturing:
+            capturing = False
+            if running_in_idle:
+                print("Stopping capture of mouse positions")
+            if listener_mouse:
+                listener_mouse.stop()
+        else:
+            capturing = True
+            if running_in_idle:
+                print("Starting to capture mouse positions")
+            listener_mouse = mouse.Listener(on_click=on_click)
+            listener_mouse.start()
+
+def main():
+    if running_in_idle:
+        print("Press 'v' to start capturing mouse positions. Press 'v' again to stop.")
+    with keyboard.Listener(on_press=on_press) as listener_keyboard:
+        listener_keyboard.join()
+
+if __name__ == "__main__":
+    main()

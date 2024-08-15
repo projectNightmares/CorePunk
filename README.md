@@ -57,7 +57,7 @@ This script is a simple yet effective tool for capturing screen coordinates via 
 # User README for Game Map Pin Placement Script
 
 ## Overview
-This Python script automates the placement and deletion of pins on a game map. The script is designed to work with a game running on a 24inch 1080p (1920x1080) resolution screen. For accurate pin placement, ensure that the game map is zoomed in, centered on the screen, and that the character remains stationary.
+This Python script automates the placement and deletion of pins on a game map. The script is designed to work with a game running on a 24inch 1080p (1920x1080) resolution screen. For accurate pin placement, ensure that the game map is zoomed in, centered on the screen, and that the character remains stationary. This code doesn't provide any advantage over other players. The code's purpose is simplify the 15 step pin creation (which is absolutely rediculous for a pin creation). 
 
 ## Key Features
 - **Automated Pin Placement(`, 1, 2, 3, 4, 5) :** The script allows you to place various types of pins on the map at the position of the character.
